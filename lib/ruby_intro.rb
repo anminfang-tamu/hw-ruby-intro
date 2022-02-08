@@ -56,7 +56,13 @@ def binary_multiple_of_4? s
   if s.length == 0 or !s.start_with? '0', '1'
     return false
   end
-  
+  s.each_char.to_a.each {|c| 
+    if c == '0' or c == '1'
+    else
+      return false
+    end
+  }
+  s.to_i(2) % 4 == 0
 end
 
 # Part 3

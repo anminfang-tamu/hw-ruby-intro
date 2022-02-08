@@ -50,6 +50,9 @@ describe '#binary_multiple_of_4?' do
     %w[101 1000000000001].each do |string|
       expect(binary_multiple_of_4?(string)).not_to be_truthy,  "Incorrect results for input: \"#{string}\""
     end
+    %w[1a1 10000a00b000001].each do |string|
+      expect(binary_multiple_of_4?(string)).not_to be_truthy,  "Incorrect results for input1: \"#{string}\""
+    end
   end
   it 'rejects invalid binary numbers [10 points]' , points: 10 do
     expect(binary_multiple_of_4?('a100')).to be_falsy, "'a100' is not a valid binary number!"
